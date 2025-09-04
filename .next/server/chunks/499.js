@@ -1,0 +1,1 @@
+"use strict";exports.id=499,exports.ids=[499],exports.modules={499:(e,t,s)=>{s.r(t),s.d(t,{default:()=>r});let r=(0,s(4247).createProxy)(String.raw`/Users/pro/Apps/keramikplatte/components/technology-section.tsx#default`)}};

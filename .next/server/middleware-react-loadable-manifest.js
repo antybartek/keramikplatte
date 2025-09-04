@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"node_modules/.pnpm/@react-three+drei@10.7.4_2323223031ef35e9572afff1ef7da986/node_modules/@react-three/drei/core/VideoTexture.js -> hls.js":{"id":null,"files":[]},"node_modules/.pnpm/@react-three+drei@10.7.4_2323223031ef35e9572afff1ef7da986/node_modules/@react-three/drei/web/FaceLandmarker.js -> @mediapipe/tasks-vision":{"id":null,"files":[]}}';

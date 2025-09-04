@@ -1,6 +1,8 @@
+import dynamic from "next/dynamic"
 import Navigation from "@/components/navigation"
 import HeroSection from "@/components/hero-section"
-import TechnologySection from "@/components/technology-section"
+
+const TechnologySection = dynamic(() => import("@/components/technology-section"), { ssr: false })
 import TargetAudienceSection from "@/components/target-audience-section"
 import CallToActionSection from "@/components/call-to-action-section"
 import ProjectsSection from "@/components/projects-section"

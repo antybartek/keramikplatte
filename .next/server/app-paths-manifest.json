@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/architekci/page": "app/architekci/page.js",
+  "/budynki-edukacyjne/page": "app/budynki-edukacyjne/page.js",
+  "/biura-nieruchomosci/page": "app/biura-nieruchomosci/page.js",
+  "/budownictwo-mieszkaniowe/page": "app/budownictwo-mieszkaniowe/page.js",
+  "/page": "app/page.js",
+  "/obiekty-przemyslowe/page": "app/obiekty-przemyslowe/page.js",
+  "/deweloperzy/page": "app/deweloperzy/page.js",
+  "/obiekty-uzytecznosci-publicznej/page": "app/obiekty-uzytecznosci-publicznej/page.js"
+}
