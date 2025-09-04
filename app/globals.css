@@ -1,0 +1,214 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #312783;
+  /* Updated to match logo colors - golden gradient and navy blue */
+  --card: #f9fafb;
+  --card-foreground: #312783;
+  --popover: #ffffff;
+  --popover-foreground: #312783;
+  --primary: #c58511;
+  --primary-foreground: #ffffff;
+  --secondary: #312783;
+  --secondary-foreground: #ffffff;
+  --muted: #f9fafb;
+  --muted-foreground: #64748b;
+  --accent: #efc981;
+  --accent-foreground: #312783;
+  --destructive: #ea580c;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #ffffff;
+  --ring: rgba(197, 133, 17, 0.5);
+  --chart-1: #c58511;
+  --chart-2: #312783;
+  --chart-3: #efc981;
+  --chart-4: #c98c22;
+  --chart-5: #e6c081;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #312783;
+  --sidebar-primary: #f9fafb;
+  --sidebar-primary-foreground: #312783;
+  --sidebar-accent: #c58511;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: rgba(197, 133, 17, 0.5);
+}
+
+.dark {
+  /* Updated dark theme to use navy blue backgrounds with golden accents from logo */
+  --background: #1a1f3a;
+  --foreground: #efc981;
+  --card: #312783;
+  --card-foreground: #efc981;
+  --popover: #312783;
+  --popover-foreground: #efc981;
+  --primary: #efc981;
+  --primary-foreground: #312783;
+  --secondary: #4a5568;
+  --secondary-foreground: #efc981;
+  --muted: #4a5568;
+  --muted-foreground: #94a3b8;
+  --accent: #c58511;
+  --accent-foreground: #ffffff;
+  --destructive: #ea580c;
+  --destructive-foreground: #ffffff;
+  --border: #4a5568;
+  --input: #312783;
+  --ring: rgba(239, 201, 129, 0.5);
+  --chart-1: #efc981;
+  --chart-2: #312783;
+  --chart-3: #c58511;
+  --chart-4: #c98c22;
+  --chart-5: #e6c081;
+  --radius: 0.5rem;
+  --sidebar: #312783;
+  --sidebar-foreground: #efc981;
+  --sidebar-primary: #4a5568;
+  --sidebar-primary-foreground: #efc981;
+  --sidebar-accent: #efc981;
+  --sidebar-accent-foreground: #312783;
+  --sidebar-border: #4a5568;
+  --sidebar-ring: rgba(239, 201, 129, 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for ceramic granules */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Added new granule-shift animation for positioned ceramic balls that move around each other */
+@keyframes granule-shift {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(15px, -10px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-8px, 12px) rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: translate(-12px, -8px) rotate(270deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+  }
+}
+
+/* Enhanced granule-fall animation with more realistic movement */
+@keyframes granule-fall {
+  0% {
+    transform: translateY(-100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+    background: #efc981;
+  }
+  10% {
+    opacity: 0.8;
+    background: #e6c081;
+  }
+  50% {
+    transform: translateY(50vh) translateX(10px) rotate(180deg);
+    opacity: 1;
+    background: #c98c22;
+  }
+  90% {
+    opacity: 0.8;
+    background: #c58511;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-5px) rotate(360deg);
+    opacity: 0;
+    background: #efc981;
+  }
+}
+
+@keyframes wall-build {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-granule-fall {
+  animation: granule-fall 8s linear infinite;
+}
+
+/* Added new animation class for granule shifting */
+.animate-granule-shift {
+  animation: granule-shift 8s ease-in-out infinite;
+}
+
+.animate-wall-build {
+  animation: wall-build 2s ease-out forwards;
+}
